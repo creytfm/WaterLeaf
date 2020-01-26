@@ -10,7 +10,7 @@ function SearchBar(props) {
   const onSubmitHandler = e => {
     e.preventDefault();
     axios
-      .get(`https://api.openbrewerydb.org/breweries/search?query${name}`)
+      .get(`https://api.openbrewerydb.org/breweries?by_name=${name}`)
       .then(res => history.push(res.data.name))
       .catch(err => console.log(err));
       console.log(history)
